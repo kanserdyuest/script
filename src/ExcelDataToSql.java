@@ -24,7 +24,7 @@ public class ExcelDataToSql {
         FileInputStream file = new FileInputStream("c:\\Users\\Jar\\Desktop\\test.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook(file);
         XSSFSheet sheet = workbook.getSheet(sheetName);
-        String sqlString = INSERT + "'" + sheetName + "' (";
+        String sqlString = INSERT + sheetName + "(";
         XSSFRow firstRow = sheet.getRow(0);
 
         for (int i = 3; i < firstRow.getLastCellNum(); i++) {
